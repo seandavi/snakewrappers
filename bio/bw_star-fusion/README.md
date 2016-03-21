@@ -1,6 +1,7 @@
 star-fusion
 
 - memory usage: at least 22g
+- Uses local scratch (100g)
 
 ````
 rule star-fusion:
