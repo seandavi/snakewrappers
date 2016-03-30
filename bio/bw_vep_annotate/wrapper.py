@@ -37,7 +37,7 @@ variant_effect_predictor.pl \
   -i {snakemake.input.vcf} --offline --cache   \
   --dir_cache $CACHE_DIR --fasta $CACHE_DIR/${{VEP_ASSEMBLY}}.fa  \
   --output {snakemake.output.vcf} --fork ${{SLURM_CPUS_ON_NODE}} \
-  —sift s --polyphen s --vcf --canonical   \
+  —sift s --polyphen s --vcf --pick   \
   --symbol --buffer_size {buffer_size} --biotype --hgvs --assembly ${{VEP_ASSEMBLY}} \
   --gene_phenotype --gmaf --check_existing \
   --pubmed  --force_overwrite   \
