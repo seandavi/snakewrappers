@@ -13,6 +13,9 @@ except:
 # Assumes that SDST is installed:
 # "pip install git+https://github.com/seandavi/SDST.git"
 
+# fixes GATK bug where AS_MQ is supposed to be a float, but
+# always shows up as a flag
+
 shell("""
-seqtool vcf melt -f {snakemake.input} -o {snakemake.output} -s {samplename}
+seqtool vcf melt -f <( sed 's/AS_MQ;//' {snakemake.input} ) -o {snakemake.output} -s {samplename}
 """)
